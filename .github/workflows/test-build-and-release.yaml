@@ -11,10 +11,12 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v4
       - name: Building with check
+        working-directory: ./src
         run: |
           gcc operations.c check_operations.c -o check_operations \
           `pkg-config --cflags --libs check`
       - name: Testing with check
+        working-directory: ./src
         run: |
           ./check_operations
   building-and-delivery:
@@ -27,11 +29,13 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v4
       - name: Building
+        working-directory: ./src
         run: |
           gcc operations.c simplecalculator.c -o simplecalculator
       - name: Creating tar.gz
+        working-directory: ./src
         run: |
-          tar -czvf simplecalculator.tar.gz simplecalculator
+          tar -czvf ../simplecalculator.tar.gz simplecalculator
       - uses: "marvinpinto/action-automatic-releases@latest"
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
