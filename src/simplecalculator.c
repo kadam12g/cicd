@@ -5,7 +5,7 @@
 #include "simplecalculator.h"
 #include "operations.h"
 
-int main()
+int program()
 {
     printf("Simple calculator\n");
     
