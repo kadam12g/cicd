@@ -5,7 +5,7 @@
 #include "simplecalculator.h"
 #include "operations.h"
 
-int program()
+int main()
 {
     printf("Simple calculator\n");
     
@@ -62,7 +62,7 @@ char getoperation()
           "[m] Multiplication\n"
           "[d] Division\n"
           ":");
-    (void)scanf(" %c", &choosen);
+    scanf(" %c", &choosen);
     return choosen;
 }
 
