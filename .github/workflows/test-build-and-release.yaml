@@ -45,7 +45,7 @@ jobs:
         working-directory: ./src
         run: |
           gcc operations.c simplecalculator.c -o simplecalculator
-      - name Create neptun.txt
+      - name: Create neptun.txt
         working-directory: ./src
         run: |
           echo "BTNR6H" > neptun.txt
